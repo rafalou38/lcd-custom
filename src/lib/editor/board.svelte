@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { curentCharacter } from '$lib/stores/characters';
+	import { curentCharacter } from '$lib/editor/stores/characters';
 
 	let dragging = false;
 </script>

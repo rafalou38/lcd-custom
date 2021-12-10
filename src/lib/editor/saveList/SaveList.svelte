@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { curentCharacter, defaultCharacter, savedCharacters } from '$lib/stores/characters';
+	import {
+		curentCharacter,
+		defaultCharacter,
+		savedCharacters
+	} from '$lib/editor/stores/characters';
 	import type { Character } from '$lib/types/character';
 	import Icon from '@iconify/svelte';
 

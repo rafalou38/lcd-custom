@@ -2,8 +2,8 @@
 	import '$lib/supabase/api';
 	import Editor from '$lib/editor/editor.svelte';
 	import Icon from '@iconify/svelte';
-	import { curentCharacter, savedCharacters } from '$lib/stores/characters';
-	import Saved from '$lib/saveList/saved.svelte';
+	import { curentCharacter, savedCharacters } from '$lib/editor/stores/characters';
+	import Saved from '$lib/editor/saveList/saved.svelte';
 
 	$: $curentCharacter.grid = new Array($curentCharacter.height)
 		.fill(false)

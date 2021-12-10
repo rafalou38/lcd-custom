@@ -1,5 +1,5 @@
 import { browser } from '$app/env';
-import { buildGrid, loadGrid } from '$lib/editor/editor';
+import { buildGrid, loadGrid } from '$lib/editor/grid';
 import type { Character, SavedCharacter } from '$lib/types/character';
 import { writable } from 'svelte/store';
 

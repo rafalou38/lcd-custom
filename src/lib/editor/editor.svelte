@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { curentCharacter } from '$lib/stores/characters';
+	import { curentCharacter } from '$lib/editor/stores/characters';
 
 	import Icon from '@iconify/svelte';
 	import Board from './board.svelte';
