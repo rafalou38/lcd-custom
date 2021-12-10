@@ -3,15 +3,18 @@ import { buildGrid, loadGrid } from '$lib/editor/editor';
 import type { Character, SavedCharacter } from '$lib/types/character';
 import { writable } from 'svelte/store';
 
-export const savedCharacters = writable<Character[]>([]);
-export const curentCharacter = writable<Character | null>({
-	name: '',
-	grid: new Array(8).fill(false).map((_, y) => new Array(5).fill(false).map((_, x) => false)),
-	width: 5,
-	height: 8,
-	saved: false
-});
+export function defaultCharacter(): Character {
+	return {
+		name: '',
+		grid: new Array(8).fill(false).map((_, y) => new Array(5).fill(false).map((_, x) => false)),
+		width: 5,
+		height: 8,
+		saved: false
+	};
+}
 
+export const savedCharacters = writable<Character[]>([]);
+export const curentCharacter = writable<Character>(defaultCharacter());
 if (browser) {
 	// load saved characters from local storage
 	let saved: SavedCharacter[] = JSON.parse(localStorage.getItem('savedCharacters')) || [];

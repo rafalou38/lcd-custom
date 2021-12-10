@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { curentCharacter, savedCharacters } from '$lib/stores/characters';
+	import { curentCharacter, defaultCharacter, savedCharacters } from '$lib/stores/characters';
 	import type { Character } from '$lib/types/character';
 	import Icon from '@iconify/svelte';
 
@@ -11,7 +11,10 @@
 		console.log(this);
 	}
 	function remove(character: Character) {
-		// curentCharacter.set(character);
+		if (confirm(`Are you sure you want to delete the character ${character.name} ?`)) {
+			$savedCharacters = $savedCharacters.filter((char) => char.name !== character.name);
+			$curentCharacter = defaultCharacter();
+		}
 	}
 </script>
 
