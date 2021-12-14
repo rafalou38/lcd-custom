@@ -22,7 +22,7 @@
 	}
 </script>
 
-<h2 class="mb-2 text-gray-500 font-semibold">Saved</h2>
+<h2 class="w-full mb-2 text-gray-500 font-semibold">Saved</h2>
 <ul>
 	{#each $savedCharacters as character}
 		<li
