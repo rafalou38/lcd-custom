@@ -10,6 +10,7 @@ export interface Character {
 export interface SavedCharacter {
 	id?: number;
 	created_at?: string;
+	owner_id?: string;
 	name: string;
 	grid: number[];
 }

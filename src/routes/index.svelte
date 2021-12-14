@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$lib/supabase/api';
 	import Editor from '$lib/editor/editor.svelte';
 	import Icon from '@iconify/svelte';
 	import { curentCharacter, savedCharacters } from '$lib/editor/stores/characters';
