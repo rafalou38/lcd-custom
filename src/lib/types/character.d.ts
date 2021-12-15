@@ -6,6 +6,7 @@ export interface Character {
 	width: number;
 	height: number;
 	saved: boolean;
+	published: boolean;
 }
 export interface SavedCharacter {
 	id?: number;
@@ -13,4 +14,7 @@ export interface SavedCharacter {
 	owner_id?: string;
 	name: string;
 	grid: number[];
+}
+export function isPublished(character: Character | SavedCharacter): character is SavedCharacter {
+	return Object.prototype.hasOwnProperty.call(character, 'id');
 }

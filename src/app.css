@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+	.crisp {
+		image-rendering: crisp-edges;
+	}
+}
+
 body,
 html,
 #svelte {

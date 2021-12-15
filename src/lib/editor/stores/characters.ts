@@ -1,5 +1,5 @@
 import { browser } from '$app/env';
-import { buildGrid, loadGrid } from '$lib/editor/grid';
+import { buildGrid, loadGrid } from '$lib/utils/grid';
 import type { Character, SavedCharacter } from '$lib/types/character';
 import { writable } from 'svelte/store';
 
@@ -9,7 +9,8 @@ export function defaultCharacter(): Character {
 		grid: new Array(8).fill(false).map((_, y) => new Array(5).fill(false).map((_, x) => false)),
 		width: 5,
 		height: 8,
-		saved: false
+		saved: false,
+		published: false
 	};
 }
 
@@ -23,6 +24,7 @@ if (browser) {
 		return {
 			...c,
 			saved: true,
+			published: false,
 			grid,
 			width: grid[0].length,
 			height: grid.length
