@@ -1,6 +1,4 @@
-import type { Character } from '$lib/types/character';
 import { createClient } from '@supabase/supabase-js';
-import { writable } from 'svelte/store';
 
 const supabaseUrl = 'https://mdkatkscfovjjsrwkulb.supabase.co';
 const supabaseKey =

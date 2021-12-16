@@ -6,7 +6,7 @@ import { writable } from 'svelte/store';
 export function defaultCharacter(): Character {
 	return {
 		name: '',
-		grid: new Array(8).fill(false).map((_, y) => new Array(5).fill(false).map((_, x) => false)),
+		grid: new Array(8).fill(false).map((_) => new Array(5).fill(false).map((_) => false)),
 		width: 5,
 		height: 8,
 		saved: false,
@@ -19,8 +19,8 @@ export const savedCharacters = writable<Character[]>([]);
 export const curentCharacter = writable<Character>(defaultCharacter());
 if (browser) {
 	// load saved characters from local storage
-	let saved: SavedCharacter[] = JSON.parse(localStorage.getItem('savedCharacters')) || [];
-	let loaded: Character[] = saved.map((c) => {
+	const saved: SavedCharacter[] = JSON.parse(localStorage.getItem('savedCharacters')) || [];
+	const loaded: Character[] = saved.map((c) => {
 		const grid = loadGrid(c);
 		return {
 			...c,

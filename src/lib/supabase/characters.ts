@@ -2,7 +2,7 @@ import type { Character } from '$lib/types/character';
 import { supabase } from './client';
 
 export async function getPublicCharacters(search = '*') {
-	let { data: characters, error } = await supabase
+	const { data: characters, error } = await supabase
 		.from<Character>('characters')
 		.select('grid, name')
 

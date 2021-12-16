@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Editor from '$lib/editor/editor.svelte';
-	import Icon from '@iconify/svelte';
-	import { curentCharacter, savedCharacters } from '$lib/editor/stores/characters';
+	import { curentCharacter } from '$lib/editor/stores/characters';
 	import Saved from '$lib/editor/saveList/saved.svelte';
 	import LeftSidebar from '$lib/editor/leftSidebar/leftSidebar.svelte';
 	import Save from '$lib/editor/saveList/save.svelte';

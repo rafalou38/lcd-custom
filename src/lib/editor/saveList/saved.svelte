@@ -1,10 +1,6 @@
 <script lang="ts">
 	import Character from '$lib/components/character.svelte';
-	import {
-		curentCharacter,
-		defaultCharacter,
-		savedCharacters
-	} from '$lib/editor/stores/characters';
+	import { savedCharacters } from '$lib/editor/stores/characters';
 </script>
 
 <h2 class="w-full mb-2 text-gray-500 font-semibold">Saved</h2>
