@@ -10,7 +10,8 @@ export function defaultCharacter(): Character {
 		width: 5,
 		height: 8,
 		saved: false,
-		published: false
+		published: false,
+		id: Math.floor(Math.random() * 10 ** 15)
 	};
 }
 
@@ -27,7 +28,8 @@ if (browser) {
 			published: false,
 			grid,
 			width: grid[0].length,
-			height: grid.length
+			height: grid.length,
+			id: Math.floor(Math.random() * 10 ** 15)
 		};
 	});
 	savedCharacters.set(loaded);

@@ -1,5 +1,5 @@
 export interface Character {
-	id?: number;
+	id: number;
 	created_at?: string;
 	name: string;
 	grid: boolean[][];
