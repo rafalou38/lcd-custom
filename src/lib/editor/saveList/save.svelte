@@ -6,7 +6,6 @@
 	import { curentCharacter, savedCharacters } from '../stores/characters';
 
 	function save() {
-		debugger;
 		if ($curentCharacter.saved) {
 			$savedCharacters = $savedCharacters.map((character) => {
 				if (character.id === $curentCharacter.id) {
@@ -34,7 +33,6 @@
 		$curentCharacter = copy($savedCharacters[index]);
 	}
 	function duplicateCharacter() {
-		debugger;
 		const exists = !!$savedCharacters.find((character) => character.name === $curentCharacter.name);
 		if (exists) {
 			$curentCharacter.name = $curentCharacter.name + ` copy`;
