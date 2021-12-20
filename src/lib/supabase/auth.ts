@@ -4,6 +4,7 @@ import { supabase } from './client';
 
 export const userStore = writable<User | null>(null);
 
+supabase.auth.refreshSession();
 supabase.auth.onAuthStateChange((event, session) => {
 	console.log('auth state change', event, session);
 

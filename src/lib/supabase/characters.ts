@@ -4,7 +4,7 @@ import type { Writable } from 'svelte/store';
 import { supabase } from './client';
 import { userStore } from './auth';
 import type { User } from '@supabase/supabase-js';
-import { loadGrid } from '$lib/utils/grid';
+import { buildGrid, loadGrid } from '$lib/utils/grid';
 
 export const publishedCharacters: Writable<Character[]> = writable([]);
 
@@ -30,6 +30,20 @@ userStore.subscribe(async (user) => {
 	}
 });
 
+export async function savePublishedCharacters(user: User, characters: Character[]) {
+	let transformed: SavedCharacter[] = characters.map((character) => ({
+		grid: buildGrid(character),
+		name: character.name,
+		id: character.id,
+		owner_id: user.id
+	}));
+	const { data: newCharacters, error } = await supabase
+		.from<SavedCharacter>('characters')
+		.upsert(transformed);
+	console.log({ newCharacters, error });
+
+	return { newCharacters, error };
+}
 export async function getPublishedCharacters(user: User) {
 	const { data: characters, error } = await supabase
 		.from<SavedCharacter>('characters')
