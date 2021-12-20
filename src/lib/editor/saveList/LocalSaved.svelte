@@ -44,7 +44,7 @@
 			<CharacterComponent {character} />
 		</div>
 	{:else}
-		<div class="empty  w-full p-8 rounded-lg opacity-60 pointer-events-">
+		<div class="empty  w-full p-8 rounded-lg opacity-60 pointer-events-none">
 			Saved characters will appear here
 		</div>
 	{/each}
