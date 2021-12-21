@@ -1,9 +1,17 @@
 <script lang="ts">
+	import { userStore } from '$lib/supabase/auth';
+
+	import {
+		publishedCharacters,
+		removePublishedCharacters,
+		savePublishedCharacters
+	} from '$lib/supabase/characters';
+
 	import { copy } from '$lib/utils/object';
 
 	import Icon from '@iconify/svelte';
 
-	import { curentCharacter, savedCharacters } from '../stores/characters';
+	import { curentCharacter, defaultCharacter, savedCharacters } from '../stores/characters';
 
 	function save() {
 		if ($curentCharacter.saved) {
@@ -14,33 +22,70 @@
 					return character;
 				}
 			});
-		} else $savedCharacters = [...$savedCharacters, $curentCharacter];
+		} else if ($curentCharacter.published) {
+			$publishedCharacters = $publishedCharacters.map((character) => {
+				if (character.id === $curentCharacter.id) {
+					return $curentCharacter;
+				} else {
+					return character;
+				}
+			});
+			savePublishedCharacters($userStore, $publishedCharacters);
+		} else {
+			$curentCharacter.saved = true;
+
+			$savedCharacters = [...$savedCharacters, copy($curentCharacter)];
+		}
 	}
 
 	function deleteCharacter() {
 		let index = 0;
-		$savedCharacters.forEach((character, i) => {
-			if (character.id === $curentCharacter.id) {
-				index = i;
+		if ($curentCharacter.saved) {
+			$savedCharacters.forEach((character, i) => {
+				if (character.id === $curentCharacter.id) {
+					index = i;
+				}
+			});
+
+			$savedCharacters = $savedCharacters.filter(
+				(character) => character.id !== $curentCharacter.id
+			);
+
+			index = Math.min(index, $savedCharacters.length - 1);
+			if ($savedCharacters[index]) {
+				$curentCharacter = copy($savedCharacters[index]);
+			} else {
+				$curentCharacter = defaultCharacter();
 			}
-		});
+		} else if ($curentCharacter.published) {
+			$publishedCharacters.forEach((character, i) => {
+				if (character.id === $curentCharacter.id) {
+					index = i;
+				}
+			});
 
-		$savedCharacters = $savedCharacters.filter(
-			(character) => character.name !== $curentCharacter.name
-		);
+			removePublishedCharacters($curentCharacter);
 
-		index = Math.min(index, $savedCharacters.length - 1);
-		$curentCharacter = copy($savedCharacters[index]);
+			$publishedCharacters = $publishedCharacters.filter(
+				(character) => character.id !== $curentCharacter.id
+			);
+
+			index = Math.min(index, $publishedCharacters.length - 1);
+			if ($savedCharacters[index]) {
+				$curentCharacter = copy($publishedCharacters[index]);
+			} else {
+				$curentCharacter = defaultCharacter();
+			}
+		}
 	}
 	function duplicateCharacter() {
-		const exists = !!$savedCharacters.find((character) => character.name === $curentCharacter.name);
-		if (exists) {
-			$curentCharacter.name = $curentCharacter.name + ` copy`;
-			return duplicateCharacter();
-		}
 		$savedCharacters = [
 			...$savedCharacters,
-			copy($curentCharacter, { id: Math.floor(Math.random() * 10 ** 15) })
+			copy($curentCharacter, {
+				id: Math.floor(Math.random() * 10 ** 15),
+				saved: true,
+				published: false
+			})
 		];
 	}
 
