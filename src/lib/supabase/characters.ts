@@ -65,11 +65,12 @@ export async function getPublishedCharacters(user: User) {
 
 export async function getPublicCharacters(search = '*') {
 	const { data: characters, error } = await supabase
-		.from<Character>('characters')
+		.from<SavedCharacter>('characters')
 		.select('grid, name')
+		// console.log(search);
 
 		// is search is provided, only select the characters that contains "search"
-		.ilike('name', search);
+		.ilike('name', '%' + search + '%');
 
 	return { characters, error };
 }

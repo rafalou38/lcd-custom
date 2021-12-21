@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CharacterComponent from '$lib/components/character.svelte';
-	import { savedCharacters } from '$lib/editor/stores/characters';
+	import { curentCharacter, savedCharacters } from '$lib/editor/stores/characters';
 	import { flip } from 'svelte/animate';
 	import { dndzone } from 'svelte-dnd-action';
 	import { copy } from '$lib/utils/object';
@@ -25,6 +25,10 @@
 
 		$savedCharacters = e.detail.items;
 	}
+
+	function open(e) {
+		curentCharacter.set(copy(e.detail));
+	}
 </script>
 
 <h2 class="w-full mb-2 text-gray-500 font-semibold">Saved</h2>
@@ -41,7 +45,7 @@
 >
 	{#each dragCharacters as character (character.id)}
 		<div animate:flip={{ duration: flipDurationMs }}>
-			<CharacterComponent {character} />
+			<CharacterComponent {character} on:open={open} />
 		</div>
 	{:else}
 		<div class="empty  w-full p-8 rounded-lg opacity-60 pointer-events-none">

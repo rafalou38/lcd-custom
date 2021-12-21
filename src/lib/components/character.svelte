@@ -3,20 +3,18 @@
 
 	import type { Character } from '$lib/types/character';
 	import { toPNG } from '$lib/utils/grid';
-	import { copy } from '$lib/utils/object';
+	import { createEventDispatcher } from 'svelte/internal';
 
 	export let character: Character;
 
-	function open() {
-		curentCharacter.set(copy(character));
-	}
+	const dispatch = createEventDispatcher();
 </script>
 
 <li
 	title={character.name}
 	class="bg-gray-200 w-max  rounded overflow-hidden cursor-pointer"
 	class:active={$curentCharacter.id == character.id}
-	on:click={open}
+	on:click={() => dispatch('open', character)}
 >
 	<div class="grid place-items-center min-w-[4rem] h-16 bg-gray-100">
 		<img src={toPNG(character.grid)} alt="" class="h-1/2 aspect-auto crisp" />

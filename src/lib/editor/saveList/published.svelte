@@ -9,6 +9,8 @@
 		removePublishedCharacters,
 		savePublishedCharacters
 	} from '$lib/supabase/characters';
+	import { curentCharacter } from '../stores/characters';
+	import { copy } from '$lib/utils/object';
 	const flipDurationMs = 300;
 
 	let dragSavedCharacters: Character[] = [];
@@ -34,6 +36,10 @@
 		savePublishedCharacters($userStore, e.detail.items as Character[]);
 		$publishedCharacters = e.detail.items;
 	}
+
+	function open(e) {
+		curentCharacter.set(copy(e.detail));
+	}
 </script>
 
 <h2 class="w-full my-2 text-gray-500 font-semibold">Published</h2>
@@ -51,7 +57,7 @@
 	>
 		{#each dragSavedCharacters as character (character.id)}
 			<div animate:flip={{ duration: flipDurationMs }}>
-				<CharacterComponent {character} />
+				<CharacterComponent {character} on:open={open} />
 			</div>
 		{:else}
 			<div
