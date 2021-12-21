@@ -4,21 +4,35 @@
 	import { dndzone } from 'svelte-dnd-action';
 	import type { Character } from '$lib/types/character';
 	import { signIn, userStore } from '$lib/supabase/auth';
-	import { publishedCharacters } from '$lib/supabase/characters';
+	import {
+		publishedCharacters,
+		removePublishedCharacters,
+		savePublishedCharacters
+	} from '$lib/supabase/characters';
 	const flipDurationMs = 300;
 
 	let dragSavedCharacters: Character[] = [];
 
-	$: console.log('user:', $userStore);
-	$: console.log('publishedCharacters:', $publishedCharacters);
+	$: dragSavedCharacters = $publishedCharacters;
 
 	function handleDndConsider(e) {
 		console.log('consider');
 		dragSavedCharacters = e.detail.items;
 	}
 	function handleDndFinalize(e) {
-		console.log('finalize');
+		console.log('finalize', e);
 		dragSavedCharacters = e.detail.items;
+
+		const ids = dragSavedCharacters.map((c) => c.id);
+		const removed = $publishedCharacters.filter((c) => !ids.includes(c.id));
+		removed.forEach((c) => {
+			removePublishedCharacters(c);
+			c.published = false;
+			c.saved = true;
+		});
+
+		savePublishedCharacters($userStore, e.detail.items as Character[]);
+		$publishedCharacters = e.detail.items;
 	}
 </script>
 
