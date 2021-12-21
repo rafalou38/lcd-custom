@@ -14,7 +14,7 @@
 		);
 </script>
 
-<div class="flex flex-col items-center h-full">
+<div class="flex flex-col items-center">
 	<div class="main flex flex-col lg:flex-row justify-around flex-wrap w-full max-w-5xl mx-auto ">
 		<LeftSidebar />
 
