@@ -1,9 +1,12 @@
 <script lang="ts">
 	import BrowsePopup from '$lib/browse/BrowsePopup.svelte';
 	import CharacterComponent from '$lib/components/character.svelte';
+	import ExportPopup from '$lib/components/export/ExportPopup.svelte';
+	import { currentExport } from '$lib/components/export/store';
 	import Popup from '$lib/components/popup.svelte';
 	import { getPublicCharacters } from '$lib/supabase/characters';
 	import type { Character } from '$lib/types/character';
+	import type { ExportOption } from '$lib/types/export';
 	import { loadGrid } from '$lib/utils/grid';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte/internal';
@@ -43,6 +46,9 @@
 	function select(e) {
 		selected = e.detail;
 	}
+	function close() {
+		selected = null;
+	}
 </script>
 
 <input type="text" placeholder="Search" class="w-full" bind:value={search} on:change={refresh} />
@@ -65,5 +71,8 @@
 {/if}
 
 {#if selected}
-	<BrowsePopup character={selected} />
+	<BrowsePopup character={selected} on:close={close} />
+	{#if $currentExport}
+		<ExportPopup />
+	{/if}
 {/if}
