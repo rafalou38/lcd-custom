@@ -3,8 +3,7 @@ export function exportGridToArduino(name: string, grid: boolean[][]) {
 		.map((row) => row.reduce((acc, cell) => acc + (cell ? '1' : '0'), '\tB'))
 		.join(',\n');
 
-	return `
-byte ${name}[] = {
+	return `byte ${name}[] = {
 ${transformedGrid}
 };
 `;

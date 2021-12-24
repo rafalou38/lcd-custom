@@ -1275,6 +1275,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+highlight.js@11.3.1:
+  version "11.3.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.3.1.tgz#813078ef3aa519c61700f84fe9047231c5dc3291"
+  integrity sha512-PUhCRnPjLtiLHZAQ5A/Dt5F8cWZeMyj9KRsACsWT+OD6OP0x6dp5OmT5jdx0JgEyPxPZZIPQpRN2TciUT7occw==
+
 ignore@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
@@ -2178,6 +2183,13 @@ svelte-dnd-action@^0.9.13:
   version "0.9.13"
   resolved "https://registry.yarnpkg.com/svelte-dnd-action/-/svelte-dnd-action-0.9.13.tgz#094b369062789981410f213fe87ea7cefa895e7f"
   integrity sha512-UN7eo4R/cmRJHX99ajVwGmwwFr9lg5qSXOMqZoAXbCt9qE/iSJIuJ5qOEFnd77zP/F93YHPEeQ8iYbfE9ale7g==
+
+svelte-highlight@^5.1.4:
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/svelte-highlight/-/svelte-highlight-5.1.4.tgz#3492fab266fb2f781f5aefd6cb11731911006233"
+  integrity sha512-MNnhc6qEkp/JgAHaieUBivzUd2i195kC592Fqh0dF2kmd5x6WpBykLFUQ9KmIbYr8/QKYeI2Qp1cNWoGiqBrBA==
+  dependencies:
+    highlight.js "11.3.1"
 
 svelte-hmr@^0.14.7:
   version "0.14.7"
