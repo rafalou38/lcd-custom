@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class="grid place-items-center absolute inset-0 bg-black/40 backdrop-blur-[2px]"
+	class="grid place-items-center z-10 absolute inset-0 bg-black/40 backdrop-blur-[2px]"
 	on:click={close}
 >
 	<div

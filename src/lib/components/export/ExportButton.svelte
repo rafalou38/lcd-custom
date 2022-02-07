@@ -19,9 +19,7 @@
 	}
 </script>
 
-<svelte:body on:click={() => (selectOpen = false)} />
-
-<div class="relative w-max">
+<div class="relative w-max" on:click={() => (selectOpen = false)}>
 	<div
 		class="relative flex items-center rounded-md h-10 w-max overflow-hidden bg-indigo-600"
 		class:rounded-b-none={selectOpen}
