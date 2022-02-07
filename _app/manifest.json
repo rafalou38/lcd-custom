@@ -1,0 +1,95 @@
+{
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "start-40a9285a.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-0536b2c5.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/index.svelte",
+      "src/routes/browse.svelte",
+      "src/routes/editor.svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "pages/__layout.svelte-590d0e8a.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-0536b2c5.js",
+      "_auth-ace2d5de.js"
+    ],
+    "css": [
+      "assets/pages/__layout.svelte-14006cf7.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "error.svelte-4171f680.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-0536b2c5.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "pages/index.svelte-e73901b8.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-0536b2c5.js"
+    ]
+  },
+  "src/routes/browse.svelte": {
+    "file": "pages/browse.svelte-332b0b71.js",
+    "src": "src/routes/browse.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-0536b2c5.js",
+      "_characters-ae3937c7.js",
+      "_auth-ace2d5de.js"
+    ]
+  },
+  "src/routes/editor.svelte": {
+    "file": "pages/editor.svelte-3b443e03.js",
+    "src": "src/routes/editor.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-0536b2c5.js",
+      "_characters-ae3937c7.js",
+      "_auth-ace2d5de.js"
+    ],
+    "css": [
+      "assets/pages/editor.svelte-784e0645.css"
+    ]
+  },
+  "_vendor-0536b2c5.js": {
+    "file": "chunks/vendor-0536b2c5.js",
+    "css": [
+      "assets/vendor-20ef22cf.css"
+    ]
+  },
+  "_auth-ace2d5de.js": {
+    "file": "chunks/auth-ace2d5de.js",
+    "imports": [
+      "_vendor-0536b2c5.js"
+    ]
+  },
+  "_characters-ae3937c7.js": {
+    "file": "chunks/characters-ae3937c7.js",
+    "imports": [
+      "_vendor-0536b2c5.js",
+      "_auth-ace2d5de.js"
+    ],
+    "css": [
+      "assets/characters-cccacdab.css"
+    ]
+  }
+}

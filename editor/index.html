@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="google-site-verification" content="PjPqquRJ_2nmLkV6xO3MsTwsTsi8wNTOEE996pK9nRc" />
+		<meta http-equiv="content-security-policy" content=""><title>LCD • Editor</title><meta name="description" content="Editor used to create custom characters for LCD displays." data-svelte="svelte-pj5ttw">
+	<link rel="stylesheet" href="/_app/assets/vendor-20ef22cf.css">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-14006cf7.css">
+	<link rel="stylesheet" href="/_app/assets/pages/editor.svelte-784e0645.css">
+	<link rel="stylesheet" href="/_app/assets/characters-cccacdab.css">
+	<link rel="modulepreload" href="/_app/start-40a9285a.js">
+	<link rel="modulepreload" href="/_app/chunks/vendor-0536b2c5.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-590d0e8a.js">
+	<link rel="modulepreload" href="/_app/chunks/auth-ace2d5de.js">
+	<link rel="modulepreload" href="/_app/pages/editor.svelte-3b443e03.js">
+	<link rel="modulepreload" href="/_app/chunks/characters-ae3937c7.js">
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<nav class="flex w-full items-center justify-between bg-indigo-600 px-4 py-2 text-white"><a href="/" class="font-semibold">LCD - custom</a>
+	<ul class="flex gap-1 font-medium"><li><a href="/editor" class="flex rounded px-2 py-1 hover:bg-indigo-700">Editor</a></li>
+		<li><a href="/browse" class="flex rounded px-2 py-1 hover:bg-indigo-700">Browse</a></li>
+		<li class="pl-2"><button href="/browse" class="flex items-center gap-2 px-2 py-1 hover:bg-indigo-700 rounded">Login </button></li></ul></nav>
+
+
+
+
+<div class="flex flex-col items-center"><div class="main mx-auto mt-4 flex w-full max-w-5xl flex-col flex-wrap justify-around lg:flex-row "><div class="mx-auto w-max"><div><label for="size" class="font-semibold text-gray-500">Size</label>
+		<div class="mb-4 flex gap-4"><input class="h-8 w-20 rounded border-none bg-gray-200 px-4 py-1" id="size" aria-label="width" type="number" value="5">
+			<span>x</span>
+			<input class="h-8 w-20 rounded border-none bg-gray-200 px-4 py-1" id="size" aria-label="height" type="number" value="8">
+			<button class="grid h-8 w-8 place-items-center rounded bg-red text-white" title="Reset grid size"></button></div></div>
+	<div class="flex justify-center gap-1"><button class="flex grow items-center justify-center gap-2 rounded bg-green py-1 px-2 font-bold text-white" title="Invert grid cells.">INVERT </button>
+		<button class="flex grow items-center justify-center gap-2 rounded bg-red py-1 px-2 font-bold text-white" title="clear grid">CLEAR </button></div></div>
+
+		<div class="mx-auto w-max"><div class="mb-11 grid w-max gap-2 svelte-13uhwqx"><button class="btn btn-up mx-4 h-8 svelte-13uhwqx" title="move grid content up"></button>
+		<button class="btn btn-left my-4 w-8 svelte-13uhwqx" title="move grid content left"></button>
+
+		<div class="board w-max border-l border-t border-gray-500 svelte-10e1y9i"><div class="flex"><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 0 y:0"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 1 y:0"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 2 y:0"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 3 y:0"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 4 y:0"></button>
+		</div><div class="flex"><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 0 y:1"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 1 y:1"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 2 y:1"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 3 y:1"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 4 y:1"></button>
+		</div><div class="flex"><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 0 y:2"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 1 y:2"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 2 y:2"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 3 y:2"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 4 y:2"></button>
+		</div><div class="flex"><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 0 y:3"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 1 y:3"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 2 y:3"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 3 y:3"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 4 y:3"></button>
+		</div><div class="flex"><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 0 y:4"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 1 y:4"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 2 y:4"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 3 y:4"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 4 y:4"></button>
+		</div><div class="flex"><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 0 y:5"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 1 y:5"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 2 y:5"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 3 y:5"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 4 y:5"></button>
+		</div><div class="flex"><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 0 y:6"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 1 y:6"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 2 y:6"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 3 y:6"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 4 y:6"></button>
+		</div><div class="flex"><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 0 y:7"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 1 y:7"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 2 y:7"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 3 y:7"></button><button class="h-8 w-8 border-r border-b border-gray-500 svelte-10e1y9i" aria-label="grid cell at x: 4 y:7"></button>
+		</div>
+</div>
+
+		<button class="btn btn-right my-4 w-8 svelte-13uhwqx" title="move grid content right"></button>
+		<button class="btn btn-down mx-4 h-8 svelte-13uhwqx" title="move grid content down"></button></div>
+</div></div>
+	<div class="mx-auto w-full max-w-5xl"><div class="flex gap-5"><form class="w-max"><label for="name" class="font-semibold text-gray-500">Name</label>
+		<input class="h-8 w-full rounded border-none bg-gray-200 px-2 py-2" id="name" type="text" required value="">
+		<div class="mb-2 mt-2 flex gap-2"><button class="flex h-8 grow items-center justify-center gap-2 rounded bg-green px-4 py-2 font-bold text-white" type="submit" id="save">SAVE </button>
+			</div>
+		</form>
+	<div class="mb-4"><label for="name" class="font-semibold text-gray-500">Export</label>
+		<div class="relative w-max"><div class="relative flex h-10 w-max items-center overflow-hidden rounded-md bg-indigo-600"><button class="flex items-center py-2 px-4 text-white transition-all duration-200 hover:bg-indigo-500">
+			ARDUINO</button>
+		<button title="export type selection" class="h-full px-2 text-white transition-all duration-200 hover:bg-indigo-500"></button></div>
+	</div></div></div>
+
+		<h2 class="mb-2 w-full font-semibold text-gray-500">Saved</h2>
+<ul class="flex flex-wrap gap-2"><div class="empty w-full p-8 rounded-lg opacity-60 pointer-events-none">Saved characters will appear here
+		</div></ul>
+
+<h2 class="my-2 w-full font-semibold text-gray-500">Published</h2>
+<div class="empty border-2 border-gray-400 border-dashed w-full p-8 rounded-lg opacity-60 pointer-events-none">You must be logged in to publish
+	</div></div></div>
+
+
+		<script type="module" data-hydrate="15swqay">
+		import { start } from "/_app/start-40a9285a.js";
+		start({
+			target: document.querySelector('[data-hydrate="15swqay"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/__layout.svelte-590d0e8a.js"),
+						import("/_app/pages/editor.svelte-3b443e03.js")
+				],
+				url: new URL("http://sveltekit-prerender/editor"),
+				params: {}
+			}
+		});
+	</script></div>
+	</body>
+</html>
