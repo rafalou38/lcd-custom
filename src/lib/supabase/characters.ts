@@ -29,7 +29,15 @@ userStore.subscribe(async (user) => {
 		}
 	}
 });
-
+export function prepareCharacterForPub(character: Character) {
+	return {
+		...character,
+		saved: false,
+		published: true,
+		width: character.grid[0].length,
+		height: character.grid.length
+	};
+}
 export async function removePublishedCharacters(character: Character) {
 	const { data: deleted, error } = await supabase
 		.from<SavedCharacter>('characters')

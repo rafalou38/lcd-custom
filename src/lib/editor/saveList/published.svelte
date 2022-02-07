@@ -5,6 +5,7 @@
 	import type { Character } from '$lib/types/character';
 	import { signIn, userStore } from '$lib/supabase/auth';
 	import {
+		prepareCharacterForPub,
 		publishedCharacters,
 		removePublishedCharacters,
 		savePublishedCharacters
@@ -23,7 +24,7 @@
 	}
 	function handleDndFinalize(e) {
 		console.log('finalize', e);
-		dragSavedCharacters = e.detail.items;
+		dragSavedCharacters = e.detail.items.map(prepareCharacterForPub);
 
 		const ids = dragSavedCharacters.map((c) => c.id);
 		const removed = $publishedCharacters.filter((c) => !ids.includes(c.id));
@@ -33,8 +34,8 @@
 			c.saved = true;
 		});
 
-		savePublishedCharacters($userStore, e.detail.items as Character[]);
-		$publishedCharacters = e.detail.items;
+		savePublishedCharacters($userStore, dragSavedCharacters as Character[]);
+		$publishedCharacters = dragSavedCharacters;
 	}
 
 	function open(e) {

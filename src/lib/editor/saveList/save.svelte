@@ -38,7 +38,7 @@
 		}
 	}
 
-	function deleteCharacter() {
+	async function deleteCharacter() {
 		let index = 0;
 		if ($curentCharacter.saved) {
 			$savedCharacters.forEach((character, i) => {
