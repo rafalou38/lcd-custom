@@ -74,5 +74,4 @@
 		You must be logged in to publish
 	</div>
 {/if}
-<button on:click={() => signIn('github')}>LOGIN</button>
 <pre>{$userStore?.id || null}</pre>
