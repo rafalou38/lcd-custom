@@ -32,6 +32,7 @@
 			{current}
 		</button>
 		<button
+			title="export type selection"
 			class="h-full px-2 text-white  transition-all duration-200 hover:bg-indigo-500"
 			on:click|stopPropagation={() => (selectOpen = !selectOpen)}
 		>
@@ -43,6 +44,7 @@
 			{#each options as option}
 				<button
 					class="bg-indigo-600 py-2 px-4 text-white transition-all duration-200 hover:bg-indigo-500"
+					title="export as {option}"
 					on:click={() => (current = option)}
 				>
 					{option}

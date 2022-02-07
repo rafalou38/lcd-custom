@@ -51,6 +51,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>LCD • Browser</title>
+	<meta name="description" content="Library of LCD characters made by the community." />
+</svelte:head>
+
 <input type="text" placeholder="Search" class="w-full" bind:value={search} on:change={refresh} />
 {#if loading}
 	<!-- loading animation -->

@@ -5,11 +5,12 @@
 </script>
 
 <div class="board w-max border-l border-t border-gray-500">
-	{#each $curentCharacter.grid as row}
+	{#each $curentCharacter.grid as row, y}
 		<div class="flex">
-			{#each row as pixel}
+			{#each row as pixel, x}
 				<button
 					class="h-8 w-8 border-r border-b border-gray-500"
+					aria-label="grid cell at x: {x} y:{y}"
 					class:active={pixel}
 					on:mousedown={() => {
 						dragging = true;

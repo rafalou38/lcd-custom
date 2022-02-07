@@ -19,20 +19,28 @@
 
 <div class="mx-auto w-max">
 	<div class="mb-11 grid w-max gap-2">
-		<button class="btn btn-up mx-4 h-8" on:click={moveGrid.bind(null, 0, 1)}
-			><Icon icon="ic:sharp-chevron-left" rotate="90deg" /></button
+		<button
+			class="btn btn-up mx-4 h-8"
+			on:click={moveGrid.bind(null, 0, 1)}
+			title="move grid content up"><Icon icon="ic:sharp-chevron-left" rotate="90deg" /></button
 		>
-		<button class="btn btn-left my-4 w-8" on:click={moveGrid.bind(null, 1, 0)}
-			><Icon icon="ic:sharp-chevron-left" /></button
+		<button
+			class="btn btn-left my-4 w-8"
+			on:click={moveGrid.bind(null, 1, 0)}
+			title="move grid content left"><Icon icon="ic:sharp-chevron-left" /></button
 		>
 
 		<Board />
 
-		<button class="btn btn-right my-4 w-8" on:click={moveGrid.bind(null, -1, 0)}
-			><Icon icon="ic:sharp-chevron-right" /></button
+		<button
+			class="btn btn-right my-4 w-8"
+			on:click={moveGrid.bind(null, -1, 0)}
+			title="move grid content right"><Icon icon="ic:sharp-chevron-right" /></button
 		>
-		<button class="btn btn-down mx-4 h-8" on:click={moveGrid.bind(null, 0, -1)}
-			><Icon icon="ic:sharp-chevron-right" rotate="90deg" /></button
+		<button
+			class="btn btn-down mx-4 h-8"
+			on:click={moveGrid.bind(null, 0, -1)}
+			title="move grid content down"><Icon icon="ic:sharp-chevron-right" rotate="90deg" /></button
 		>
 	</div>
 </div>

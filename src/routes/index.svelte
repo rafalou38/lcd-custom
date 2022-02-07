@@ -1,3 +1,11 @@
+<svelte:head>
+	<title>LCD custom</title>
+	<meta
+		name="description"
+		content="Website to find, share and create custom characters for LCD displays."
+	/>
+</svelte:head>
+
 <div class="container mx-auto">
 	<h1 class="my-4 text-4xl font-bold">Find and create lcd characters.</h1>
 	<div class="ml-2">

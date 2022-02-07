@@ -16,6 +16,11 @@
 		);
 </script>
 
+<svelte:head>
+	<title>LCD • Editor</title>
+	<meta name="description" content="Editor used to create custom characters for LCD displays." />
+</svelte:head>
+
 {#if $currentExport}
 	<ExportPopup />
 {/if}
