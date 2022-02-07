@@ -12,15 +12,15 @@
 
 <li
 	title={character.name}
-	class="bg-gray-200 w-max  rounded overflow-hidden cursor-pointer"
+	class="w-max cursor-pointer  overflow-hidden rounded bg-gray-200"
 	class:active={$curentCharacter.id == character.id}
 	on:click={() => dispatch('open', character)}
 >
-	<div class="grid place-items-center min-w-[4rem] h-16 bg-gray-100">
-		<img src={toPNG(character.grid)} alt="" class="h-1/2 aspect-auto crisp" />
+	<div class="grid h-16 min-w-[4rem] place-items-center bg-gray-100">
+		<img src={toPNG(character.grid)} alt="" class="crisp aspect-auto h-1/2" />
 	</div>
 	<p
-		class="text-center pb-1 border-b-8 border-gray-200 px-2 max-w-[6rem] max-h-[4rem] overflow-hidden overflow-ellipsis"
+		class="max-h-[4rem] max-w-[6rem] overflow-hidden overflow-ellipsis border-b-8 border-gray-200 px-2 pb-1 text-center"
 	>
 		{character.name}
 	</p>

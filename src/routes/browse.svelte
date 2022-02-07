@@ -54,8 +54,8 @@
 <input type="text" placeholder="Search" class="w-full" bind:value={search} on:change={refresh} />
 {#if loading}
 	<!-- loading animation -->
-	<div class="w-full h-full flex justify-center items-center">
-		<Icon icon="mdi:loading" class="text-4xl  animate-spin" />
+	<div class="flex h-full w-full items-center justify-center">
+		<Icon icon="mdi:loading" class="animate-spin  text-4xl" />
 	</div>
 {:else if error}
 	<!-- red alert containing error -->

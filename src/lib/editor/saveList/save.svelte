@@ -103,17 +103,17 @@
 
 <div class="flex gap-5">
 	<form on:submit|preventDefault={submit} class="w-max">
-		<label for="name" class="text-gray-500 font-semibold">Name</label>
+		<label for="name" class="font-semibold text-gray-500">Name</label>
 		<input
-			class="w-full h-8 px-2 py-2 bg-gray-200 border-none rounded"
+			class="h-8 w-full rounded border-none bg-gray-200 px-2 py-2"
 			id="name"
 			type="text"
 			required
 			bind:value={$curentCharacter.name}
 		/>
-		<div class="flex gap-2 mb-2 mt-2">
+		<div class="mb-2 mt-2 flex gap-2">
 			<button
-				class="flex items-center justify-center gap-2 grow h-8 px-4 py-2  bg-green font-bold text-white rounded"
+				class="flex h-8 grow items-center justify-center gap-2 rounded bg-green  px-4 py-2 font-bold text-white"
 				type="submit"
 				id="save"
 			>
@@ -121,7 +121,7 @@
 			</button>
 			{#if $curentCharacter.saved || $curentCharacter.published}
 				<button
-					class="flex items-center justify-center gap-2 grow h-8 px-4 py-2  bg-red font-bold text-white rounded"
+					class="flex h-8 grow items-center justify-center gap-2 rounded bg-red  px-4 py-2 font-bold text-white"
 					type="submit"
 					id="delete"
 				>
@@ -131,7 +131,7 @@
 		</div>
 		{#if $curentCharacter.saved || $curentCharacter.published}
 			<button
-				class="flex items-center justify-center gap-2 mb-4 w-full h-8 px-4 py-2  bg-blue font-bold text-white rounded"
+				class="mb-4 flex h-8 w-full items-center justify-center gap-2 rounded bg-blue  px-4 py-2 font-bold text-white"
 				type="submit"
 				id="duplicate"
 			>
@@ -140,7 +140,7 @@
 		{/if}
 	</form>
 	<div class="mb-4">
-		<label for="name" class="text-gray-500 font-semibold">Export</label>
+		<label for="name" class="font-semibold text-gray-500">Export</label>
 		<ExportButton character={$curentCharacter} />
 	</div>
 </div>

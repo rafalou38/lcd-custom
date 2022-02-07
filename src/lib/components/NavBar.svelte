@@ -4,16 +4,16 @@
 	import Icon from '@iconify/svelte';
 </script>
 
-<nav class="flex justify-between items-center w-full px-4 py-2 bg-indigo-600 text-white">
+<nav class="flex w-full items-center justify-between bg-indigo-600 px-4 py-2 text-white">
 	<a href="/" class="font-semibold">LCD - custom</a>
 	<ul class="flex gap-1 font-medium">
-		<li><a href="/editor" class="flex px-2 py-1 hover:bg-indigo-700 rounded">Editor</a></li>
-		<li><a href="/browse" class="flex px-2 py-1 hover:bg-indigo-700 rounded">Browse</a></li>
+		<li><a href="/editor" class="flex rounded px-2 py-1 hover:bg-indigo-700">Editor</a></li>
+		<li><a href="/browse" class="flex rounded px-2 py-1 hover:bg-indigo-700">Browse</a></li>
 		<li class="pl-2">
 			{#if $userStore}
 				<button
 					href="/browse"
-					class="flex items-center gap-2 px-2 py-1 hover:bg-indigo-700 rounded"
+					class="flex items-center gap-2 rounded px-2 py-1 hover:bg-indigo-700"
 					on:click={() => signout()}
 					>{$userStore.user_metadata.user_name}<Icon icon="mdi:logout" /></button
 				>

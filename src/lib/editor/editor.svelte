@@ -17,21 +17,21 @@
 	}
 </script>
 
-<div class="w-max mx-auto">
-	<div class="grid w-max gap-2 mb-11">
-		<button class="btn btn-up h-8 mx-4" on:click={moveGrid.bind(null, 0, 1)}
+<div class="mx-auto w-max">
+	<div class="mb-11 grid w-max gap-2">
+		<button class="btn btn-up mx-4 h-8" on:click={moveGrid.bind(null, 0, 1)}
 			><Icon icon="ic:sharp-chevron-left" rotate="90deg" /></button
 		>
-		<button class="btn btn-left w-8 my-4" on:click={moveGrid.bind(null, 1, 0)}
+		<button class="btn btn-left my-4 w-8" on:click={moveGrid.bind(null, 1, 0)}
 			><Icon icon="ic:sharp-chevron-left" /></button
 		>
 
 		<Board />
 
-		<button class="btn btn-right w-8 my-4" on:click={moveGrid.bind(null, -1, 0)}
+		<button class="btn btn-right my-4 w-8" on:click={moveGrid.bind(null, -1, 0)}
 			><Icon icon="ic:sharp-chevron-right" /></button
 		>
-		<button class="btn btn-down h-8 mx-4" on:click={moveGrid.bind(null, 0, -1)}
+		<button class="btn btn-down mx-4 h-8" on:click={moveGrid.bind(null, 0, -1)}
 			><Icon icon="ic:sharp-chevron-right" rotate="90deg" /></button
 		>
 	</div>
@@ -39,7 +39,7 @@
 
 <style lang="postcss">
 	.btn {
-		@apply bg-blue text-white text-2xl flex justify-center items-center rounded;
+		@apply flex items-center justify-center rounded bg-blue text-2xl text-white;
 	}
 	.btn-up {
 		grid-area: up;

@@ -11,11 +11,11 @@
 </script>
 
 <div
-	class="grid place-items-center z-10 absolute inset-0 bg-black/40 backdrop-blur-[2px]"
+	class="absolute inset-0 z-10 grid place-items-center bg-black/40 backdrop-blur-[2px]"
 	on:click={close}
 >
 	<div
-		class="relative w-full max-w-md h-full max-h-96 bg-white rounded-md {classes}"
+		class="relative h-full max-h-96 w-full max-w-md rounded-md bg-white {classes}"
 		on:click|stopPropagation={() => {}}
 	>
 		<button

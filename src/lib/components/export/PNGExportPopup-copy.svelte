@@ -11,9 +11,9 @@
 </script>
 
 <Popup on:close={() => currentExport.set(null)}>
-	<div class="relative flex justify-center items-center p-4 h-full">
+	<div class="relative flex h-full items-center justify-center p-4">
 		<a href={imageUrl} target="_blank" class="w-1/2"
-			><img src={imageUrl} alt="" class="w-full crisp" /></a
+			><img src={imageUrl} alt="" class="crisp w-full" /></a
 		>
 	</div>
 </Popup>

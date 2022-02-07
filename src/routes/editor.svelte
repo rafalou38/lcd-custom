@@ -22,13 +22,13 @@
 
 <div class="flex flex-col items-center">
 	<div
-		class="main flex mt-4 flex-col lg:flex-row justify-around flex-wrap w-full max-w-5xl mx-auto "
+		class="main mx-auto mt-4 flex w-full max-w-5xl flex-col flex-wrap justify-around lg:flex-row "
 	>
 		<LeftSidebar />
 
 		<Editor />
 	</div>
-	<div class="w-full max-w-5xl mx-auto">
+	<div class="mx-auto w-full max-w-5xl">
 		<Save />
 
 		<Saved />

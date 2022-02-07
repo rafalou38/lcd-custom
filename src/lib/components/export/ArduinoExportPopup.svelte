@@ -28,13 +28,13 @@
 </svelte:head>
 
 <Popup on:close={() => currentExport.set(null)}>
-	<div class="flex flex-col p-4 h-full">
+	<div class="flex h-full flex-col p-4">
 		<Highlight
 			language={arduino}
 			code={exportGridToArduino('name', $currentExport.character.grid)}
 		/>
 		<button
-			class="flex w-full py-2 bg-indigo-500 justify-center items-center gap-2 font-bold text-white rounded "
+			class="flex w-full items-center justify-center gap-2 rounded bg-indigo-500 py-2 font-bold text-white "
 			class:copied
 			on:click={copy}
 		>

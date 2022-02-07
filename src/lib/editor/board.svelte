@@ -4,12 +4,12 @@
 	let dragging = false;
 </script>
 
-<div class="board w-max border-gray-500 border-l border-t">
+<div class="board w-max border-l border-t border-gray-500">
 	{#each $curentCharacter.grid as row}
 		<div class="flex">
 			{#each row as pixel}
 				<button
-					class="w-8 h-8 border-gray-500 border-r border-b"
+					class="h-8 w-8 border-r border-b border-gray-500"
 					class:active={pixel}
 					on:mousedown={() => {
 						dragging = true;

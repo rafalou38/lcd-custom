@@ -21,28 +21,28 @@
 
 <div class="relative w-max" on:click={() => (selectOpen = false)}>
 	<div
-		class="relative flex items-center rounded-md h-10 w-max overflow-hidden bg-indigo-600"
+		class="relative flex h-10 w-max items-center overflow-hidden rounded-md bg-indigo-600"
 		class:rounded-b-none={selectOpen}
 	>
 		<button
-			class="flex items-center py-2 px-4 text-white duration-200 transition-all hover:bg-indigo-500"
+			class="flex items-center py-2 px-4 text-white transition-all duration-200 hover:bg-indigo-500"
 			on:click={startExport}
 		>
-			<Icon icon="mdi:open-in-new" class="w-4 h-4 mr-2" />
+			<Icon icon="mdi:open-in-new" class="mr-2 h-4 w-4" />
 			{current}
 		</button>
 		<button
-			class="h-full px-2 text-white  duration-200 transition-all hover:bg-indigo-500"
+			class="h-full px-2 text-white  transition-all duration-200 hover:bg-indigo-500"
 			on:click|stopPropagation={() => (selectOpen = !selectOpen)}
 		>
 			<Icon icon="mdi:menu-down" />
 		</button>
 	</div>
 	{#if selectOpen}
-		<div class="absolute w-full flex flex-col rounded-b-md overflow-hidden">
+		<div class="absolute flex w-full flex-col overflow-hidden rounded-b-md">
 			{#each options as option}
 				<button
-					class="py-2 px-4 text-white duration-200 transition-all bg-indigo-600 hover:bg-indigo-500"
+					class="bg-indigo-600 py-2 px-4 text-white transition-all duration-200 hover:bg-indigo-500"
 					on:click={() => (current = option)}
 				>
 					{option}

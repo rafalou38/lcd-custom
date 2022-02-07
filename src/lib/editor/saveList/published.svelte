@@ -43,7 +43,7 @@
 	}
 </script>
 
-<h2 class="w-full my-2 text-gray-500 font-semibold">Published</h2>
+<h2 class="my-2 w-full font-semibold text-gray-500">Published</h2>
 {#if $userStore}
 	<ul
 		class="flex flex-wrap gap-2"
