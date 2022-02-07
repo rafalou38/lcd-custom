@@ -75,4 +75,3 @@
 		You must be logged in to publish
 	</div>
 {/if}
-<pre>{$userStore?.id || null}</pre>
