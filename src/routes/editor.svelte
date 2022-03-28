@@ -17,8 +17,11 @@
 </script>
 
 <svelte:head>
-	<title>LCD • Editor</title>
-	<meta name="description" content="Editor used to create custom characters for LCD displays." />
+	<title>Create custom lcd characters - Editor</title>
+	<meta
+		name="description"
+		content="Editor used to create custom characters for LCD displays, the characters can be exported for an arduino project or as a PNG image."
+	/>
 </svelte:head>
 
 {#if $currentExport}
@@ -26,6 +29,7 @@
 {/if}
 
 <div class="flex flex-col items-center">
+	<h1 class="my-4 text-4xl font-bold">Editor</h1>
 	<div
 		class="main mx-auto mt-4 flex w-full max-w-5xl flex-col flex-wrap justify-around lg:flex-row "
 	>

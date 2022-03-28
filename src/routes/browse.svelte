@@ -52,32 +52,47 @@
 </script>
 
 <svelte:head>
-	<title>LCD • Browser</title>
-	<meta name="description" content="Library of LCD characters made by the community." />
+	<title>Find lcd characters made by the community</title>
+	<meta
+		name="description"
+		content="Library of LCD characters made by the community that can be used with arduino."
+	/>
 </svelte:head>
+<div class="mx-auto max-w-5xl px-4">
+	<h1 class="my-4 text-4xl font-bold">Library</h1>
 
-<input type="text" placeholder="Search" class="w-full" bind:value={search} on:change={refresh} />
-{#if loading}
-	<!-- loading animation -->
-	<div class="flex h-full w-full items-center justify-center">
-		<Icon icon="mdi:loading" class="animate-spin  text-4xl" />
+	<div class="my-4 flex">
+		<input
+			type="text"
+			placeholder="Search"
+			class=" w-full rounded rounded-r-none"
+			bind:value={search}
+			on:change={refresh}
+		/>
+		<button class="rounded rounded-l-none bg-indigo-600 px-4 py-2 text-white">Search</button>
 	</div>
-{:else if error}
-	<!-- red alert containing error -->
-	<div class="bg-rose-200 p-2 m-2 rounded">
-		{error}
-	</div>
-{:else}
-	<ol class="flex gap-1 flex-wrap">
-		{#each results as result}
-			<CharacterComponent character={result} on:open={select} />
-		{/each}
-	</ol>
-{/if}
-
-{#if selected}
-	<BrowsePopup character={selected} on:close={close} />
-	{#if $currentExport}
-		<ExportPopup />
+	{#if loading}
+		<!-- loading animation -->
+		<div class="flex h-full w-full items-center justify-center">
+			<Icon icon="mdi:loading" class="animate-spin  text-4xl" />
+		</div>
+	{:else if error}
+		<!-- red alert containing error -->
+		<div class="bg-rose-200 p-2 m-2 rounded">
+			{error}
+		</div>
+	{:else}
+		<ol class="flex gap-2 flex-wrap">
+			{#each results as result}
+				<CharacterComponent character={result} on:open={select} />
+			{/each}
+		</ol>
 	{/if}
-{/if}
+
+	{#if selected}
+		<BrowsePopup character={selected} on:close={close} />
+		{#if $currentExport}
+			<ExportPopup />
+		{/if}
+	{/if}
+</div>

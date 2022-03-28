@@ -1,8 +1,8 @@
 <svelte:head>
-	<title>LCD custom</title>
+	<title>LCD custom | create characters and find more in the library</title>
 	<meta
 		name="description"
-		content="Website to find, share and create custom characters for LCD displays."
+		content="Website to find, share and create custom characters for LCD displays. These characters can then be used on arduino projects or anything you want with the png image."
 	/>
 </svelte:head>
 
