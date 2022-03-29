@@ -4,7 +4,7 @@
 
 	import Highlight from 'svelte-highlight';
 	import arduino from 'svelte-highlight/src/languages/arduino';
-	import theme from 'svelte-highlight/src/styles/arduino-light';
+	import theme from 'svelte-highlight/src/styles/atelier-sulphurpool-light';
 	import { exportGridToArduino } from '$lib/utils/export';
 	import Icon from '@iconify/svelte';
 	let copied = false;
@@ -30,6 +30,7 @@
 <Popup on:close={() => currentExport.set(null)}>
 	<div class="flex h-full flex-col p-4">
 		<Highlight
+			class="my-5 overflow-hidden rounded-xl"
 			language={arduino}
 			code={exportGridToArduino('name', $currentExport.character.grid)}
 		/>
