@@ -11,9 +11,3 @@
 <LocalSaved />
 
 <Published />
-
-<style>
-	:global(.dragging) {
-		background: #fafafa;
-	}
-</style>

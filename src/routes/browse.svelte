@@ -5,7 +5,7 @@
 	import { currentExport } from '$lib/components/export/store';
 	import Popup from '$lib/components/popup.svelte';
 	import { getPublicCharacters } from '$lib/supabase/characters';
-	import type { Character } from '$lib/types/character';
+	import type { Character, SavedCharacter } from '$lib/types/character';
 	import type { ExportOption } from '$lib/types/export';
 	import { loadGrid } from '$lib/utils/grid';
 	import Icon from '@iconify/svelte';
@@ -15,7 +15,7 @@
 	let error = '';
 	let loading = true;
 	let results: Character[] = [];
-	let selected: Character | null = null;
+	let selected: (SavedCharacter & Character) | null = null;
 
 	async function refresh() {
 		loading = true;
@@ -35,7 +35,8 @@
 					grid,
 					width: grid[0].length,
 					height: grid.length,
-					id: Math.floor(Math.random() * 10 ** 15)
+					id: Math.floor(Math.random() * 10 ** 15),
+					ownerGithubID: c.ownerGithubID
 				};
 			});
 		}

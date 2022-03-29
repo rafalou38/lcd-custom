@@ -14,3 +14,7 @@ html,
 #svelte {
 	@apply h-full;
 }
+.dragging {
+	background: #fafafa;
+	transition: background 0.2s ease-in-out;
+}

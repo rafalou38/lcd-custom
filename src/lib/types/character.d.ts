@@ -14,6 +14,7 @@ export interface SavedCharacter {
 	owner_id?: string;
 	name: string;
 	grid: number[];
+	ownerGithubID?: number;
 }
 export function isPublished(character: Character | SavedCharacter): character is SavedCharacter {
 	return Object.prototype.hasOwnProperty.call(character, 'id');

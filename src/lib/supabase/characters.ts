@@ -14,7 +14,7 @@ userStore.subscribe(async (user) => {
 		if (published) {
 			publishedCharacters.set(
 				published.map((character) => {
-					let grid = loadGrid(character);
+					const grid = loadGrid(character);
 					return {
 						...character,
 						id: character.id,
@@ -49,11 +49,12 @@ export async function removePublishedCharacters(character: Character) {
 }
 
 export async function savePublishedCharacters(user: User, characters: Character[]) {
-	let transformed: SavedCharacter[] = characters.map((character) => ({
+	const transformed: SavedCharacter[] = characters.map((character) => ({
 		grid: buildGrid(character),
 		name: character.name,
 		id: character.id,
-		owner_id: user.id
+		owner_id: user.id,
+		ownerGithubID: parseInt(user.user_metadata.provider_id)
 	}));
 	const { data: newCharacters, error } = await supabase
 		.from<SavedCharacter>('characters')
@@ -74,7 +75,7 @@ export async function getPublishedCharacters(user: User) {
 export async function getPublicCharacters(search = '*') {
 	const { data: characters, error } = await supabase
 		.from<SavedCharacter>('characters')
-		.select('grid, name')
+		.select('grid, name, ownerGithubID')
 		// console.log(search);
 
 		// is search is provided, only select the characters that contains "search"
