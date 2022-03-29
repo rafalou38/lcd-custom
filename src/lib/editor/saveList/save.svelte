@@ -89,6 +89,9 @@
 			})
 		];
 	}
+	function newCharacter() {
+		$curentCharacter = defaultCharacter();
+	}
 
 	const submit = function (event: SubmitEvent & { currentTarget: EventTarget & HTMLFormElement }) {
 		if (event.submitter.id === 'save') {
@@ -97,6 +100,8 @@
 			deleteCharacter();
 		} else if (event.submitter.id === 'duplicate') {
 			duplicateCharacter();
+		} else if (event.submitter.id === 'new') {
+			newCharacter();
 		}
 	};
 </script>
@@ -130,13 +135,22 @@
 			{/if}
 		</div>
 		{#if $curentCharacter.saved || $curentCharacter.published}
-			<button
-				class="mb-4 flex h-8 w-full items-center justify-center gap-2 rounded bg-blue  px-4 py-2 font-bold text-white"
-				type="submit"
-				id="duplicate"
-			>
-				DUPLICATE <Icon icon="mdi:content-duplicate" class="text-lg" />
-			</button>
+			<div class="flex gap-2">
+				<button
+					class="mb-4 flex h-8 w-full items-center justify-center gap-2 rounded bg-blue  px-4 py-2 font-bold text-white"
+					type="submit"
+					id="duplicate"
+				>
+					DUPLICATE <Icon icon="mdi:content-duplicate" class="text-lg" />
+				</button>
+				<button
+					class="mb-4 flex h-8 w-full items-center justify-center gap-2 rounded bg-green  px-4 py-2 font-bold text-white"
+					type="submit"
+					id="new"
+				>
+					NEW <Icon icon="mdi:content-save-edit" class="text-lg" />
+				</button>
+			</div>
 		{/if}
 	</form>
 	<div class="mb-4">
