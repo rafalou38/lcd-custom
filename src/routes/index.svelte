@@ -42,7 +42,7 @@
 				If you don't want to bother making your own <strong>characters</strong>, You can just open
 				the library and find one that suits your needs. Or even find inspiration for your own.
 			</p>
-			<a href="/editor" class="my-4 flex w-max rounded bg-indigo-600 px-4 py-2 text-white"
+			<a href="/browse" class="my-4 flex w-max rounded bg-indigo-600 px-4 py-2 text-white"
 				>Browse characters</a
 			>
 		</div>

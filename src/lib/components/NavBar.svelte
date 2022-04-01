@@ -12,14 +12,12 @@
 		<li class="pl-2">
 			{#if $userStore}
 				<button
-					href="/browse"
 					class="flex items-center gap-2 rounded px-2 py-1 hover:bg-indigo-700"
 					on:click={() => signout()}
 					>{$userStore.user_metadata.user_name}<Icon icon="mdi:logout" /></button
 				>
 			{:else}
 				<button
-					href="/browse"
 					class="flex items-center gap-2 px-2 py-1 hover:bg-indigo-700 rounded"
 					on:click={() => signIn('github')}>Login <Icon icon="fa-brands:github" /></button
 				>
